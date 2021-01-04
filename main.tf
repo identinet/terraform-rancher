@@ -1,4 +1,17 @@
-resource "rancher2_cluster" "cluster" {
+terraform {
+  required_providers {
+    rke = {
+      source  = "rancher/rke"
+      version = "~> 1.1.6"
+    }
+    rancher2 = {
+      source  = "rancher/rancher2"
+      version = "~> 1.10.6"
+    }
+  }
+}
+
+resource "rke_cluster" "cluster" {
   name = var.cluster_name
   cluster_auth_endpoint {
     enabled = true
