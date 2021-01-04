@@ -4,10 +4,6 @@ terraform {
       source  = "rancher/rke"
       version = "~> 1.1.6"
     }
-    rancher2 = {
-      source  = "rancher/rancher2"
-      version = "~> 1.10.6"
-    }
   }
 }
 
