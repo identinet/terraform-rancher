@@ -4,7 +4,16 @@ terraform {
       source  = "rancher/rke"
       version = "~> 1.1.6"
     }
+    rancher2 = {
+      source  = "rancher/rancher2"
+      version = "~> 1.10.6"
+    }
   }
+}
+
+provider "rancher2" {
+  api_url   = var.rancher_api_url
+  token_key = var.rancher_api_token
 }
 
 resource "rke_cluster" "cluster" {
@@ -72,5 +81,3 @@ resource "rke_cluster" "cluster" {
     }
   }
 }
-
-
